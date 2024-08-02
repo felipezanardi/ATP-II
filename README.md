@@ -1,2 +1,6 @@
 # ATP-II
-Algoritmos e Técnicas de Programação II (Exercícios)
+Aulas de Algoritmos e Técnicas de Programação II (Exercícios)
+
+FCT/Unesp – Presidente Prudente
+
+Prof. Danillo Roberto Pereira
