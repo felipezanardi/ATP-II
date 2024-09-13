@@ -1,6 +1,6 @@
 /*
-Escreva um programa em C que realize a rotaÁ„o de uma matriz
-quadrada 4x4 no sentido hor·rio.
+Escreva um programa em C que realize a rota√ß√£o de uma matriz
+quadrada 4x4 no sentido hor√°rio.
 */
 
 #include <stdio.h>
@@ -11,7 +11,7 @@ void imprimir_matriz(int matriz[SIZE][SIZE]);
 
 int main()
 {
-    int matriz[SIZE][SIZE] = {{1,1,1,1},{2,2,2,2},{3,3,3,3},{4,4,4,4}};
+    int matriz[SIZE][SIZE] = {{1,1,1,1}, {2,2,2,2}, {3,3,3,3}, {4,4,4,4}};
     int matriz_modificada[SIZE][SIZE];
 
     for (int i = 0; i < SIZE; i++)
