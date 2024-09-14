@@ -1,6 +1,6 @@
 /*
 Escreva um programa em C que preencha uma matriz 5x5 com
-números primos.
+nÃºmeros primos.
 */
 
 #include <stdio.h>
@@ -43,8 +43,8 @@ void imprimir_matriz(int matriz[SIZE][SIZE])
 
 void preencher_matriz(int matriz[SIZE][SIZE])
 {
-    int primo_x = 1; // pegar o xº numero primo existente
-                     // ex: quando primo = 3, pega o terceiro numero primo existente (5)
+    int primo_x = 1; // pegar o xÂº numero primo existente
+                     // ex: quando primo_x = 3, pega o terceiro numero primo existente (5)
     for (int i = 0; i < SIZE; i++)
     {
         for (int j = 0; j < SIZE; j++)
@@ -58,7 +58,7 @@ void preencher_matriz(int matriz[SIZE][SIZE])
 int num_primo(int primo_x)
 {
     int num = 1;
-    int i = primo_x; // contador, roda até chegar no xº numero primo
+    int i = primo_x; // contador, roda atÃ© chegar no xÂº numero primo
 
     while (i != 0)
     {
@@ -73,7 +73,7 @@ int num_primo(int primo_x)
     return num;
 }
 
-int eh_primo(int num, int divisor) // 1 = é primo, 0 = nao é primo
+int eh_primo(int num, int divisor) // 1 = Ã© primo, 0 = nao Ã© primo
 {
     if (divisor * divisor > num)
     {
