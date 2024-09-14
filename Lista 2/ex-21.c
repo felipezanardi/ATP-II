@@ -14,7 +14,7 @@ int eh_permutacao(int matriz[LINHA][COLUNA]);
 
 int main()
 {
-    int matriz[LINHA][COLUNA] ={
+    int matriz[LINHA][COLUNA] = {
         {0,0,1},
         {1,0,0},
         {0,1,0}};
