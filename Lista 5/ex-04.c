@@ -18,7 +18,7 @@ int main()
     printf("Digite o termo que deseja: ");
     scanf("%d", &numero);
 
-    printf("%do termo da sequ�ncia de Fibonacci: %d\n", numero, fibonacci(numero));
+    printf("%do termo da sequência de Fibonacci: %d\n", numero, fibonacci(numero));
     
     return 0;
 }
