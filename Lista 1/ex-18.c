@@ -8,22 +8,15 @@ do array. Imprima a soma.
 
 int main()
 {
-    int i, soma = 0, array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int *ponteiro = array;
+    int soma = 0, array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int *ptr = array;
 
-    printf("Elementos da array inicial:\n");
-
-    for (i=0; i<10; i++)
+    for (int i=0; i<10; i++)
     {
-        printf("%d ", array[i]);
+        soma += *(ptr + i);
     }
 
-    for (i=0; i<10; i++)
-    {
-        soma += *(ponteiro+i);
-    }
+    printf("Soma: %d\n", soma);
 
-    printf("\nSoma: %d\n", soma);
-    
     return 0;
 }

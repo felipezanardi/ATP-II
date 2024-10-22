@@ -6,34 +6,34 @@ array.
 
 #include <stdio.h>
 
+void imprimir_array(char array[]);
+
 int main()
 {
-    char array[12] = {'x', 'b', 'c', 'a', 'h', 'j', 'w', 'd', 'k', 'c', 'n', 'q'};
-    char *ponteiro = array, temp;
+    char array[12] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'};
+    char *ptr = array;
 
-    int j = 11;
-
-    printf("Elementos da array inicial:\n");
-
-    for (int i=0; i<12; i++)
-    {
-        printf("%c ", array[i]);
-    }
+    printf("Array inicial:");
+    imprimir_array(array);
 
     for (int i=0; i<6; i++)
     {
-        temp = *(ponteiro+i);
-        *(ponteiro+i) = *(ponteiro+j);
-        *(ponteiro+j) = temp;
-        j--;
+        char aux = *(ptr + i);
+        *(ptr + i) = *(ptr + 11 - i);
+        *(ptr + 11 - i) = aux;
     }
 
-    printf("\nElementos da array final:\n");
+    printf("Array final:");
+    imprimir_array(array);
 
+    return 0;
+}
+
+void imprimir_array(char array[])
+{
     for (int i=0; i<12; i++)
     {
-        printf("%c ", array[i]);
+        printf(" %c", array[i]);
     }
-    
-    return 0;
+    printf("\n");
 }

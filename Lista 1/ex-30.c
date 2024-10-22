@@ -7,55 +7,48 @@ para armazenar 3 strings, ordene as strings em ordem alfabética e as imprima.
 #include <stdlib.h>
 #include <string.h>
 
-#define TAMANHO 50
+#define TAM 50 // tamanho da string
 #define QTD 3 // quantidade de strings
 
-void ordenar(char *array[], int n);
+void ordernar(char *strings[], int n);
 
 int main()
 {
-    char *array_str[QTD];
-    char *string;
+    char *strings[QTD];
 
     for (int i=0; i<QTD; i++)
     {
-        string = malloc(TAMANHO * sizeof(char));
+        strings[i] = malloc(TAM * sizeof(char));
 
         printf("Digite a %da string: ", i+1);
-        gets(string);
-
-        array_str[i] = string;
+        fgets(strings[i], TAM, stdin);
     }
 
-    ordenar(array_str, QTD);
+    printf("\n");
 
-    printf("\nStrings em ordem alfabetica:\n");
+    ordernar(strings, QTD);
 
     for (int i=0; i<QTD; i++)
     {
-        printf("String %d: %s\n", i+1, array_str[i]);
+        printf("String %d: %s", i+1, strings[i]);
 
-        free(array_str[i]);
+        free(strings[i]);
     }
 
     return 0;
 }
 
-void ordenar(char *array[], int n)
+void ordernar(char *strings[], int n)
 {
-    char *temp;
-
-    for (int i=0; i < n-1; i++) // bubble sort
+    for (int i = 0; i<n; i++) // bubble sort
     {
         for (int j = i+1; j<n; j++)
         {
-            if (strcmp(array[i], array[j]) > 0)
+            if (strcmp(strings[i], strings[j]) > 0)
             {
-                temp = array[i];
-
-                array[i] = array[j];
-
-                array[j] = temp;
+                char *temp = strings[i];
+                strings[i] = strings[j];
+                strings[j] = temp;
             }
         }
     }

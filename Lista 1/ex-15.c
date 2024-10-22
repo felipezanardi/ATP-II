@@ -5,21 +5,31 @@ inteiros e use um ponteiro para calcular a soma dos elementos do array.
 
 #include <stdio.h>
 
+void imprimir_array(int array[]);
+
 int main()
 {
-    int i, soma=0, array[7] = {1, 2, 3, 4, 5, 6 ,7};
-    int *ponteiro = &array;
+    int soma = 0, array[7] = {1, 2, 3, 4, 5, 6, 7};
+    int *ptr = array;
 
-    printf("Elementos da array:\n");
+    printf("Elementos do array:");
+    imprimir_array(array);
 
-    for (i=0; i<7; i++)
+    for (int i=0; i<7; i++)
     {
-        printf("%d ", *(ponteiro+i));
+        soma += *(ptr + i);
     }
 
-    for (i=0; i<7; i++){
-        soma += *(ponteiro+i);
-    }
-    printf("\nSoma: %d\n", soma);
+    printf("Soma: %d\n", soma);
+
     return 0;
+}
+
+void imprimir_array(int array[])
+{
+    for (int i=0; i<7; i++)
+    {
+        printf(" %d", array[i]);
+    }
+    printf("\n");
 }

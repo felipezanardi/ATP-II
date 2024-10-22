@@ -8,20 +8,20 @@ de caracteres, palavras e linhas na string.
 
 int main()
 {
-    int i, palavras = 1, linhas = 1;
+    int palavras = 1, linhas = 1;
     char string[100];
 
     printf("Digite algo: ");
     gets(string);
 
-    for (i=0; i<100; i++)
+    for (int i=0; i<100; i++)
     {
-        if(string[i] == ' ' || string[i] == '\n')
+        if (string[i] == ' ' || string[i] == '\n')
         {
             palavras++;
         }
 
-        if(string[i] == '\n')
+        if (string[i] == '\n')
         {
             linhas++;
         }
@@ -31,6 +31,6 @@ int main()
            "Numero de caracteres: %d\n"
            "Palavras: %d\n"
            "Linhas: %d\n", string, strlen(string), palavras, linhas);
-           
+
     return 0;
 }

@@ -22,13 +22,13 @@ int main()
 
     for (int i=0; i<strlen(string); i++)
     {
-        if(string[i] == caractere)
+        if (string[i] == caractere)
         {
             string[i] = substitui;
         }
     }
 
     printf("String modificada: %s\n", string);
-    
+
     return 0;
 }

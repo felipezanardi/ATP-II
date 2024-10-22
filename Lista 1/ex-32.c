@@ -7,43 +7,36 @@ para armazenar 4 strings e encontre a string de maior comprimento.
 #include <stdlib.h>
 #include <string.h>
 
-#define TAMANHO 50
+#define TAM 50 // tamanho da string
 #define QTD 4 // quantidade de strings
 
 int main()
 {
-    char *arr_ptr[QTD]; // array de ponteiros
+    char *strings[QTD];
 
-    // alocar memória
-    for (int i = 0; i < QTD; i++)
-    {
-        arr_ptr[i] = malloc(TAMANHO * sizeof(char));
-    }
+    int maior = 0, maior_ind = 0;
 
-    // ler strings
-    for (int i = 0; i < QTD; i++)
+    for (int i=0; i<QTD; i++)
     {
+        strings[i] = malloc(TAM * sizeof(char));
+
         printf("Digite a %da string: ", i+1);
-        gets(arr_ptr[i]);
-    }
+        fgets(strings[i], TAM, stdin);
 
-    // encontrar a maior string
-    char *maior = arr_ptr[0];
+        int tamstr = strlen(strings[i]);
 
-    for (int i = 1; i < QTD; i++)
-    {
-        if (strlen(arr_ptr[i]) > strlen(maior))
+        if (tamstr > maior)
         {
-            maior = arr_ptr[i];
+            maior = tamstr;
+            maior_ind = i; // salva o índice da maior string
         }
     }
 
-    printf("\nString de maior comprimento: %s\n", maior);
+    printf("\nMaior string: %s", strings[maior_ind]);
 
-    // liberar memória alocada
-    for (int i = 0; i < QTD; i++)
+    for (int i=0; i<QTD; i++)
     {
-        free(arr_ptr[i]);
+        free(strings[i]);
     }
 
     return 0;

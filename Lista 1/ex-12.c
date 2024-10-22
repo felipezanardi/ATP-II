@@ -23,7 +23,7 @@ int main()
 
         printf("%d ", numeros[i]);
 
-        if(numeros[i] < 0)
+        if (numeros[i] < 0)
         {
             num_negativo++;
         }

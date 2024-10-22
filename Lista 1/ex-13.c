@@ -7,16 +7,15 @@ Use um ponteiro para acessar e imprimir todos os elementos do array.
 
 int main()
 {
-    int i, array[5] = {1, 2, 3, 4, 5};
-    int *ponteiro = &array;
+    int array[5] = {1, 2, 3, 4, 5};
+    int *ptr = array;
 
-    printf("Elementos da array:\n");
+    printf("Elementos do array:");
 
-    for (i=0; i<5; i++)
+    for (int i=0; i<5; i++)
     {
-        printf("%d ", *(ponteiro+i));
+        printf(" %d", *(ptr + i));
     }
-
     printf("\n");
 
     return 0;

@@ -13,10 +13,10 @@ int main()
     printf("Digite uma palavra: ");
     gets(string_1);
 
-    printf("Digite uma palavra novamente: ");
+    printf("Digite outra palavra: ");
     gets(string_2);
 
     printf("String: %s\n", strcat(string_1, string_2));
-    
+
     return 0;
 }

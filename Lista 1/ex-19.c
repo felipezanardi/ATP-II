@@ -8,25 +8,17 @@ dos valores.
 
 int main()
 {
-    float array[8] = {1.5, 2.5, 3, 4, 5, 6, 7.5, 8.5};
-    float *ponteiro = array;
-    float soma = 0, media;
-
-    printf("Elementos da array inicial:\n");
+    float media = 0, array[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    float *ptr = array;
 
     for (int i=0; i<8; i++)
     {
-        printf("%.2f ", array[i]);
+        media += *(ptr + i);
     }
 
-    for (int i=0; i<8; i++)
-    {
-        soma += *(ponteiro+i);
-    }
+    media /= 8;
 
-    media = soma/8;
+    printf("Media: %f\n", media);
 
-    printf("\nMedia: %.2f\n", media);
-    
     return 0;
 }

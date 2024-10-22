@@ -21,7 +21,7 @@ int main()
         // formula para definir o range: rand() % (max + 1 - min) + min
         num[i] = rand() % (50 + 1);
 
-        if((num[i] > maior) || (i == 0))
+        if ((num[i] > maior) || (i == 0))
         {
             maior = num[i];
         }

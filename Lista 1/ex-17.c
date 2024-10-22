@@ -1,33 +1,37 @@
 /*
 Escreva um programa em C que declare um array de 5 inteiros
-e use aritmÃ©tica de ponteiros para somar 10 a cada elemento do array. Imprima
+e use aritmética de ponteiros para somar 10 a cada elemento do array. Imprima
 o array resultante.
 */
 
 #include <stdio.h>
 
+void imprimir_array(int array[]);
+
 int main()
 {
-    int i, array[5] = {1, 2, 3, 4, 5};
-    int *ponteiro = array;
+    int array[5] = {1, 2, 3, 4, 5};
+    int *ptr = array;
 
-    printf("Elementos da array inicial:\n");
+    printf("Array inicial:");
+    imprimir_array(array);
 
-    for (i=0; i<5; i++)
+    for (int i=0; i<5; i++)
     {
-        printf("%d ", array[i]);
+        *(ptr + i) += 10;
     }
 
-    printf("\nElementos da array final:\n");
+    printf("Array final:");
+    imprimir_array(array);
 
-    for (i=0; i<5; i++)
-    {
-        *(ponteiro+i) += 10;
-
-        printf("%d ", array[i]);
-    }
-
-    printf("\n");
-    
     return 0;
+}
+
+void imprimir_array(int array[])
+{
+    for (int i=0; i<5; i++)
+    {
+        printf(" %d", array[i]);
+    }
+    printf("\n");
 }

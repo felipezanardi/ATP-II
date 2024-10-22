@@ -8,30 +8,31 @@ se ela é um palíndromo.
 
 int main()
 {
-    int i, eh_palindromo = 1, tamanho;
+    int eh_palindromo = 1;
     char string[50];
 
     printf("Digite uma palavra: ");
     gets(string);
 
-    tamanho = strlen(string);
+    int tamanho = strlen(string);
 
-    for (i=0; i<tamanho; i++)
+    for (int i=0; i<tamanho; i++)
     {
-        if(string[0+i] != string[tamanho-1-i] && eh_palindromo == 1)
+        if (string[i] != string[tamanho-1-i] && eh_palindromo == 1)
         {
             eh_palindromo = 0;
+            break;
         }
     }
 
-    if (eh_palindromo == 1)
+    if (eh_palindromo)
     {
-        printf("String e palindromo\n");
+        printf("String eh palindromo\n");
     }
-    else if(eh_palindromo == 0)
+    else
     {
-        printf("String nao e palindromo\n");
+        printf("String nao eh palindromo\n");
     }
-    
+
     return 0;
 }

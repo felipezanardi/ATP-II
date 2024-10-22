@@ -6,28 +6,33 @@ dos elementos do array. Imprima o array resultante.
 
 #include <stdio.h>
 
+void imprimir_array(int array[]);
+
 int main()
 {
-    int i, array[5] = {1, 2, 3, 4, 5};
-    int *ponteiro = &array;
+    int array[5] = {1, 2, 3, 4, 5};
+    int *ptr = array;
 
-    printf("Elementos da array inicial:\n");
+    printf("Array inicial:");
+    imprimir_array(array);
 
-    for (i=0; i<5; i++)
+    // modificar array
+    for (int i=0; i<5; i++)
     {
-        printf("%d ", *(ponteiro+i));
+        *(ptr + i) *= 2;
     }
 
-    printf("\nElementos da array modificada:\n");
-
-    for (i=0; i<5; i++)
-    {
-        *(ponteiro+i) *= 6;
-
-        printf("%d ", *(ponteiro+i));
-    }
-
-    printf("\n");
+    printf("Array modificado:");
+    imprimir_array(array);
 
     return 0;
+}
+
+void imprimir_array(int array[])
+{
+    for (int i=0; i<5; i++)
+    {
+        printf(" %d", array[i]);
+    }
+    printf("\n");
 }
